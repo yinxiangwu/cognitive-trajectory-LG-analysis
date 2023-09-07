@@ -18,7 +18,7 @@ It should be noted that this standard 3-step analysis relies on the conditional 
 
   * Step 1c: Refit the selected GMM from step 1a with selected DIF covariates from step 1b( age and possibly one or more of gender, education) (syntax is similar to that in step 1b)
 * Step 2: Obtain the classifications (this is included in the output file from Latent Gold)
-* Step 3: Estimate the step-three model with all covariates and/or outcomes, taking into account that classification errors which depend on the covariates introduced in step 1. Note the outcome model in this step would include the covariates selected in 1b as well as the other pre-specified covariates for the physical activity model, including age, gender, education, retirement, BMI, CESD-Score, living arrangement, self-rated health, and ActiPAL/ActiGraph awake wear time. (see Latent Gold syntax for step 3)
+* Step 3: Estimate the step-three model with all covariates and/or outcomes, taking into account that classification errors which depend on the covariates introduced in step 1. Note the outcome model in this step would include the covariates selected in 1b as well as the other pre-specified covariates for the physical activity model, including age, gender, education, retirement, BMI, CESD-Score, living arrangement, self-rated health, and ActiPAL/ActiGraph awake wear time. [LatentGold syntax](syntax%20for%20step3%20outcome%20regression.txt)
 
 References:
 
