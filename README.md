@@ -12,7 +12,7 @@ It should be noted that this standard 3-step analysis relies on the conditional 
     * First decide form of the time variable using the typical mixed effects modeling (lme4 model in R), i.e. a single class latent model. Consider the cubic spline vs linear, if cubic improvement over linear could consider whether or not we can simplify by considering quadratic time. We can use likelihood ratio test compare models with different specifications for the fixed effects for time. (always using random intercepts only)
 
     *	The random effects for time will depend on how complex the time model in order to avoid introducing too many nuisance parameters. If there is a complex model on time (quadratic or cubic) then will use intercept only random effect. If chose a linear time model, then will include both random slope for time and random intercept.
-    *	 Then decide number of classes in usual way (see LatentGold syntax for fitting GMM in this step; this can be also done using LatentGold "regression" module)
+    *	 Then decide number of classes in usual way (based on models' fit statistics, LMR-test, smallest sample size of classes, clinical relevance and interpretation of the resulting trajectory groups)
 
   * Step 1b: Fit the selected GMM from step 1a with all covariates (i.e. age (categorical with 4 levels <75, 75-79, 80-84, 85+), gender, education) that are hypothesized to cause DIF. See Latent Gold syntax that was used to carry out this step. Note that we prespecify that age has to be in the latent GMM. For parsimony, only include gender, education if their effects on both latent class variable and the class indicator (longitudinal CASI-IRT score) are significant. [LatentGold syntax](syntax%20for%20step1b.txt)
 
