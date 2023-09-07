@@ -1,0 +1,24 @@
+options
+   missing  excludeall;
+   output      
+      parameters = first  betaopts=wl standarderrors=robust profile probmeans=posterior
+      estimatedvalues=model iterationdetails
+   reorderclasses;
+   step3 modal bch;
+variables
+   independent 
+    age_years numeric,
+    gender nominal,
+    education_ nominal,
+    bmi numeric,
+    CESD_Score numeric,
+    DEMO11_ nominal,
+    DEMO20A_ numeric,
+    MED1 nominal,
+    AP_awakewear_time_avg numeric;
+   dependent AP_sit_time_avg continuous;
+   latent
+    Class nominal posterior = (Class#1, Class#2, Class#3) dif = age_cat_years;
+equations
+   Class <- 1 + age_cat_years;
+   AP_sit_time_avg <- 1 + Class + age_years + gender + education_ + bmi + CESD_Score + DEMO11_ + DEMO20A_ + MED1 + AP_awakewear_time_avg;

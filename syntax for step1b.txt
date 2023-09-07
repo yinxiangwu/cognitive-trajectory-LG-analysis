@@ -1,0 +1,33 @@
+options
+   maxthreads=8;
+   algorithm 
+      tolerance=1e-08 emtolerance=0.01 emiterations=250 nriterations=50 ;
+   startvalues
+      seed=0 sets=32 tolerance=1e-05 iterations=250;
+   bayes
+      categorical=1 variances=1 latent=1 poisson=1;
+   montecarlo
+      seed=0 sets=0 replicates=500 tolerance=1e-08;
+   quadrature  nodes=10;
+   missing  excludeall;
+   output      
+      parameters=first  betaopts=wl standarderrors=robust profile profile=posterior
+      probmeans=posterior frequencies classification classification=model
+      estimatedvalues=regression predictionstatistics iterationdetails reorderclasses;
+   outfile  'linear_random_intercept_slope_3class.sav'
+      	classification=posterior classification=model prediction;
+   variables
+   caseid SUBJECT;
+   dependent casi_irt continuous;
+   independent casi_visit_dates_years numeric, age_cat_years nominal, gender nominal,
+      education_ nominal;
+   latent
+      CFactor1  continuous, 
+      CFactor2  continuous, 
+      Class nominal 3;
+equations
+   (1) CFactor1 ;
+   (1) CFactor2 ;
+   Class <- 1 + age_cat_years + gender + education_;
+   casi_irt <- 1 | Class + CFactor1 | Class + CFactor2 | Class + casi_visit_dates_years | Class + casi_visit_dates_years CFactor2 | Class + age_cat_years + gender + education_;
+   casi_irt | Class;
