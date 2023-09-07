@@ -16,9 +16,13 @@ It should be noted that this standard 3-step analysis relies on the conditional 
 
   * Step 1b: Fit the selected GMM from step 1a with all covariates (i.e. age (categorical with 4 levels <75, 75-79, 80-84, 85+), gender, education) that are hypothesized to cause DIF. See Latent Gold syntax that was used to carry out this step. Note that we prespecify that age has to be in the latent GMM. For parsimony, only include gender, education if their effects on both latent class variable and the class indicator (longitudinal CASI-IRT score) are significant. [LatentGold syntax](syntax%20for%20step1b.txt)
 
-  * Step 1c: Refit the selected GMM from step 1a with selected DIF covariates from step 1b( age and possibly one or more of gender, education) (syntax is similar to that in step 1b)
+  * Step 1c: Refit the selected GMM from step 1a with selected DIF covariates from step 1b( age and possibly one or more of gender, education) (syntax is similar to that in step 1b; simply elminating non-DIF covariates from step 1b)
 * Step 2: Obtain the classifications (this is included in the output file from Latent Gold)
 * Step 3: Estimate the step-three model with all covariates and/or outcomes, taking into account that classification errors which depend on the covariates introduced in step 1. Note the outcome model in this step would include the covariates selected in 1b as well as the other pre-specified covariates for the physical activity model, including age, gender, education, retirement, BMI, CESD-Score, living arrangement, self-rated health, and ActiPAL/ActiGraph awake wear time. [LatentGold syntax](syntax%20for%20step3%20outcome%20regression.txt)
 
 References:
-
+* Vermunt JK, Magidson J. How to perform three-step latent class analysis in the presence of measurement non-invariance or differential item functioning. Structural Equation Modeling: A Multidisciplinary Journal. 2021 May 4;28(3):356-64.
+* Vermunt, J. K. (2010). Latent class modeling with covariates: two improved three-step approaches. Polit. Anal. 18, 450–469. doi: 10.1093/pan/mpq025
+* Asparouhov T, Muthen B. Auxiliary variables in mixture modeling: three-step approaches using mplus. Struct Equ Model Multidiscip J. 2014;21(3):329–41.
+* Janssen, J. H. M., van Laar, S., de Rooij, M. J., Kuha, J., & Bakk, Z. (2019). The detection and modeling of direct effects in latent class analysis. Structural Equation Modeling: A Multidisciplinary Journal, 26, 280–290.
+* Nylund-Gibson, K., Grimm, R. P., & Masyn, K. E. (2019). Prediction from latent classes: A demonstration of different approaches to include distal outcomes in mixture models. Structural Equation Modeling: A Multidisciplinary Journal, 26, 967–985.
