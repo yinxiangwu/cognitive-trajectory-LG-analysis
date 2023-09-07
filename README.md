@@ -7,7 +7,7 @@ It should be noted that this standard 3-step analysis relies on the conditional 
 
 * Step 1: Construction of GMM
 
-  *	Step 1a: Determine the number of classes and other relevant GMM features using longitudinal CASI-IRT score data only without the inclusion of covariates, then decide on which covariates need to be in the GMM. [LatentGold syntax](syntax for step1a.txt)
+  *	Step 1a: Determine the number of classes and other relevant GMM features using longitudinal CASI-IRT score data only without the inclusion of covariates, then decide on which covariates need to be in the GMM. [LatentGold syntax](syntax%20for%20step1a.txt)
 
     * First decide form of the time variable using the typical mixed effects modeling (lme4 model in R), i.e. a single class latent model. Consider the cubic spline vs linear, if cubic improvement over linear could consider whether or not we can simplify by considering quadratic time. We can use likelihood ratio test compare models with different specifications for the fixed effects for time. (always using random intercepts only)
 
