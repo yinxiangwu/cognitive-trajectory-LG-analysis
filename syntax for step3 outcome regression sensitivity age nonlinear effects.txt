@@ -14,7 +14,7 @@ variables
     bmi numeric,
     CESD_Score numeric,
     DEMO11_ nominal,
-    DEMO20A_ numeric,
+    DEMO20A_ nominal,
     MED1 nominal,
     AG_awakewear_time_avg numeric;
    dependent AG_mv_opa_avg continuous;
