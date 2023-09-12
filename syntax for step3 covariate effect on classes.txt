@@ -7,13 +7,13 @@ options
    step3 modal ml;
 variables
    independent 
-    age_years numeric,
+    age_cat_years numeric,
     gender nominal,
     education_ nominal,
     bmi numeric,
     CESD_Score numeric,
     DEMO11_ nominal,
-    DEMO20A_ numeric,
+    DEMO20A_ nominal,
     MED1 nominal,
     AP_awakewear_time_avg numeric;
    dependent AP_sit_time_avg continuous;
