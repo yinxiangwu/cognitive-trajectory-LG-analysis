@@ -8,6 +8,7 @@ options
 variables
    independent 
     age_years numeric,
+    age_cat_years nominal,
     gender nominal,
     education_ nominal,
     bmi numeric,
